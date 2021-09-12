@@ -7,8 +7,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang={AppConfig.locale}>
-        <Head />
-        <body>
+        <Head>
+          <meta name="color-scheme" content="dark" />
+        </Head>
+        <body className="antialiased w-full min-h-screen text-white bg-gray-800 overflow-x-hidden relative">
           <Main />
           <NextScript />
         </body>

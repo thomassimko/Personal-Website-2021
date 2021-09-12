@@ -1,16 +1,4 @@
-@tailwind base;
-
-a {
-  @apply text-blue-700;
-}
-
-a:hover {
-  @apply border-b-2 border-blue-700;
-}
-
-@tailwind components;
-
-@tailwind utilities;
+@import 'tailwindcss/tailwind.css';
 
 .content p {
   @apply my-6;
@@ -18,4 +6,104 @@ a:hover {
 
 .content ul {
   @apply my-6;
+}
+
+@define-mixin blue-bar {
+  content: "";
+  position: absolute;
+  background-color: theme("colors.primary.base");
+  border-radius: 25px;
+}
+
+nav {
+  direction: rtl;
+}
+
+.watermark {
+  font-size: 17.4vw;
+  letter-spacing: 0.11em;
+  line-height: 81%;
+  font-weight: 800;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+}
+
+section.header {
+  padding-top: calc(100px + 8vw);
+}
+
+h1 {
+  font-size: max(5vw, 36px);
+  font-weight: 500;
+}
+
+h2, h3 {
+  font-size: max(3vw, 24px);
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+}
+
+h3::after {
+  @mixin blue-bar;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 4px;
+  left: 110%;
+  top: 50%;
+}
+
+.project-item {
+  &:nth-child(2n + 1) {
+    @apply sm:flex-row-reverse;
+  }
+
+  .project-item__header::before {
+    @mixin blue-bar;
+    width: 4px;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+}
+
+
+.white-button {
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: theme("colors.gray.200");
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
+
+.blue-button {
+  color: white;
+  background-color: theme("colors.primary.base");
+  padding: .5em 1em;
+  border-radius: .25em;
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+     background-color: theme("colors.primary.hover");
+   }
+}
+
+.about-item:not(.about-item:nth-child(2)) {
+  @apply md:mt-16;
+}
+
+.tech-stack svg.svg-inline--fa {
+  height: 100%;
+  width: auto;
+}
+
+.footer {
+  grid-template-columns: 1fr min-content min-content;
 }
