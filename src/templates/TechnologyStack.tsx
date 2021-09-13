@@ -1,6 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 
 type ITechnologyStackProps = {
   title: string;
@@ -12,7 +11,7 @@ const TechnologyStack = (props: ITechnologyStackProps) => (
   <div className="tech-stack text-center">
     <div className="h-12 w-full relative">
       {props.image ? (
-        <Image src={props.image} layout="fill" alt="" />
+        <img src={props.image} alt="" />
       ) : (
         props.iconProp && <FontAwesomeIcon icon={props.iconProp} aria-hidden />
       )}

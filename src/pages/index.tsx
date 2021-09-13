@@ -16,11 +16,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-scroll';
 
-import FirebaseLogo from '../../public/assets/images/Firebase.svg';
-import MovieRenamer from '../../public/assets/images/MovieRenamer.png';
-import MySqlLogo from '../../public/assets/images/MySQL.svg';
-import PDG from '../../public/assets/images/pdg.png';
-import QuickpickHeatmap from '../../public/assets/images/quickpick-heatmap.png';
 import { Meta } from '../layout/Meta';
 import { AboutBlock } from '../templates/AboutBlock';
 import { IconWithText } from '../templates/IconWithText';
@@ -154,8 +149,11 @@ const Index = () => {
               <TechnologyStack title="AngularJS" iconProp={faAngular} />
               <TechnologyStack title="Java" iconProp={faJava} />
               <TechnologyStack title="Python" iconProp={faPython} />
-              <TechnologyStack title="Firebase" image={FirebaseLogo} />
-              <TechnologyStack title="MySQL" image={MySqlLogo} />
+              <TechnologyStack
+                title="Firebase"
+                image="/assets/images/Firebase.svg"
+              />
+              <TechnologyStack title="MySQL" image="/assets/images/MySQL.svg" />
             </div>
           </div>
         </Section>
@@ -164,7 +162,7 @@ const Index = () => {
             <h3>Projects</h3>
             <ProjectItem
               title="Movie Renamer"
-              image={MovieRenamer}
+              image="/assets/images/MovieRenamer.png"
               description="The goal of this personal project is an application that watches a directory and automatically
                 renames the movie file to a customizable format if the name matching algorithm meets a confidence threshold,
                 logging the output.  The algorithm uses fuzzy search in ElasticSearch with data seeded from The Movie Database
@@ -179,13 +177,13 @@ const Index = () => {
             />
             <ProjectItem
               title="Sensor App"
-              image={QuickpickHeatmap}
+              image="/assets/images/quickpick-heatmap.png"
               description="I created something cool"
               technologies={['React', 'Ionic', 'Firestore', 'Typescript']}
             />
             <ProjectItem
               title="Tele-operated Strawberry Harvester"
-              image={QuickpickHeatmap}
+              image="/assets/images/quickpick-heatmap.png"
               description="In collaboration with the California Strawberry Commission, I served as front-end
               technical lead to develop a platform to enhance strawberry production through remote operation
               of strawberry harvesters and analysis of the farm’s data.  This project allowed users to control a robot
@@ -196,7 +194,7 @@ const Index = () => {
             />
             <ProjectItem
               title="Cloneless: Code Clone Detection via Program Dependence Graphs with Relaxed Constraints"
-              image={PDG}
+              image="/assets/images/pdg.png"
               description="Code clones are pieces of code that have the same functionality. While some clones may
               structurally match one another, others may look drastically different. The inclusion of code clones
               clutters a code base, leading to increased costs through maintenance. While manual clone identification may be
