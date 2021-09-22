@@ -6,7 +6,7 @@ type IProjectItemProps = {
 };
 
 const ProjectItem = (props: IProjectItemProps) => (
-  <div className="project-item relative flex mt-16 flex-col sm:flex-row gap-8">
+  <div className="project-item relative flex mt-20 flex-col sm:flex-row gap-8">
     <div className="w-full sm:w-1/3">
       <div className="rounded bg-gray-700 text-center p-3">
         <img src={props.image} className="rounded" alt="" />

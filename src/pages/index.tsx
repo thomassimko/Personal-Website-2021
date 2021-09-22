@@ -177,8 +177,10 @@ const Index = () => {
             />
             <ProjectItem
               title="Sensor App"
-              image="/assets/images/quickpick-heatmap.png"
-              description="I created something cool"
+              image="/assets/images/sensor-app.png"
+              description="This project is a cross-platform mobile app, developed in Ionic, which subscribes to real-time updates from a
+                variety of Arduino-powered sensors.  The sensors post their data to Google Firestore, and the app automatically
+                updates with new data.  If a certain threshold is met, the app users can be notified."
               technologies={['React', 'Ionic', 'Firestore', 'Typescript']}
             />
             <ProjectItem
@@ -207,8 +209,21 @@ const Index = () => {
         </Section>
         <Section classNames="bg-gray-900">
           <div className="footer grid gap-8 py-6 md:py-10">
-            <a className="white-button">
+            <a
+              className="white-button"
+              href="/assets/resume.pdf"
+              download="Thomas_Simko_Resume.pdf"
+            >
               <IconWithText icon={faDownload} buttonText="Download Resume" />
+            </a>
+            <a
+              className="white-button text-2xl"
+              target="_blank"
+              href="mailto:tjsimko@gmail.com"
+              aria-label="Mail to tjsimko@gmail.com"
+              rel="noreferrer"
+            >
+              <IconWithText icon={faEnvelope} />
             </a>
             {GithubButton}
             {LinkedInButton}
