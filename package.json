@@ -11,7 +11,8 @@
     "clean": "rimraf .next out",
     "lint": "next lint",
     "build-types": "tsc --noEmit --pretty",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "npm run build-prod && aws s3 sync out/ s3://thomassimko.com --delete && echo '🚀  Deployed!'\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
