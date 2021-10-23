@@ -65,7 +65,11 @@ const Index = () => {
         <Section classNames="pb-40 header">
           <h4
             className="text-gray-700 absolute watermark"
-            style={{ top: 'calc(100px + 2vw)', left: '-3.8vw' }}
+            style={{
+              top: 'calc(100px + 2vw)',
+              marginLeft: '-3.8vw',
+              maxWidth: 'calc(100vw + 3.8vw)',
+            }}
           >
             Software Engineer
           </h4>
@@ -73,17 +77,10 @@ const Index = () => {
             <h1>Thomas Simko</h1>
             <h2>Full-stack Developer</h2>
             <div className="flex text-base pt-12 text-lg">
-              <Link
-                type="button"
-                className="blue-button"
-                to="projects"
-                duration={500}
-                smooth
-              >
+              <Link className="blue-button" to="projects" duration={500} smooth>
                 View Portfolio
               </Link>
               <a
-                type="button"
                 className="ml-6 white-button flex items-center whitespace-nowrap"
                 href="mailto:tjsimko@gmail.com"
               >
@@ -104,45 +101,45 @@ const Index = () => {
               title="Fast-paced, data-driven development"
               iconProp={faCode}
             >
-              The best way to make decisions is using data, not ego. By
-              analyzing and interpreting data, one can determine the optimal
-              allocation of resources to solve each problem. Performing this on
-              a larger scale, results in faster delivery of features and better
-              user satisfaction.
+              I make decisions as a programmer based on data. By analyzing and
+              interpreting data, I can reduce development time and boost user
+              satisfaction.
             </AboutBlock>
             <AboutBlock
-              title="Collaborate and Embrace Feedback"
+              title="Collaborate and embrace feedback"
               iconProp={faUsers}
             >
-              The most important traits of a team are open communication,
-              diversity, and a positive attitude. Working with people who share
-              a common goal, not only makes the product butter but also makes
-              you a better contributor. All feedback is good feedback.
+              As a member of a scrum team, I practice open communication,
+              empathy, and a positive attitude. I also value feedback from my
+              teammates.
             </AboutBlock>
             <AboutBlock
-              title="Leave places better than found"
+              title="Leave it better than you found it"
               iconProp={faTree}
             >
-              Whether out in nature or in a new codebase, it is important to
-              clean up after yourself and others. In the world of engineering,
-              this process has the goal of clear, concise, maintainable code,
-              while reducing technical debt as much as possible.
+              Inside and outside the workplace, it&apos;s important to clean up
+              after yourself and others. As a software engineer, this means
+              composing clear, concise, and maintainable code.
             </AboutBlock>
           </div>
         </Section>
         <Section classNames="bg-gray-700">
           <h4
             className="text-gray-600 absolute watermark"
-            style={{ top: '50px', right: '-7vw' }}
+            style={{
+              top: '50px',
+              marginLeft: '37vw',
+              maxWidth: 'calc(100vw - 37vw)',
+            }}
           >
             Skills
           </h4>
           <div className="relative py-36">
             <h3>Technologies</h3>
             <p className="text-gray-300 max-w-md text-base">
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
-              I've worked with a wide variety of technologies as a full-stack
-              engineer, and I’m always learning new ones!
+              As a full-stack engineer, I get to work with a variety of
+              technologies. I love learning new languages and frameworks, such
+              as the ones listed below.
             </p>
             <div className="grid auto-cols-min grid-flow-col grid-rows-2 sm:grid-rows-1 gap-3 justify-between mt-12">
               <TechnologyStack title="React" iconProp={faReact} />
@@ -163,10 +160,10 @@ const Index = () => {
             <ProjectItem
               title="Movie Renamer"
               image="/assets/images/MovieRenamer.png"
-              description="The goal of this personal project is an application that watches a directory and automatically
-                renames the movie file to a customizable format if the name matching algorithm meets a confidence threshold,
-                logging the output.  The algorithm uses fuzzy search in ElasticSearch with data seeded from The Movie Database
-                API and indexed using a python script."
+              description="As a side project, I'm developing an application that renames movie files to user defined
+              formats. The program watches a directory and if the name-matching algorithm meets a confidence threshold,
+              it renames the files. The algorithm uses fuzzy matching in ElasticSearch with data seeded from The
+              Movie Database API that is indexed using a Python script."
               technologies={[
                 'React',
                 'Electron',
@@ -178,19 +175,19 @@ const Index = () => {
             <ProjectItem
               title="Sensor App"
               image="/assets/images/sensor-app.png"
-              description="This project is a cross-platform mobile app, developed in Ionic, which subscribes to real-time updates from a
-                variety of Arduino-powered sensors.  The sensors post their data to Google Firestore, and the app automatically
-                updates with new data.  If a certain threshold is met, the app users can be notified."
+              description="I developed a cross-platform mobile app using Ionic that subscribes to real-time updates from a
+                variety of Arduino-powered sensors. The sensors post their data to Google Firestore, and the app automatically
+                updates with new data. If a certain threshold is met, the app users can be notified."
               technologies={['React', 'Ionic', 'Firestore', 'Typescript']}
             />
             <ProjectItem
               title="Tele-operated Strawberry Harvester"
               image="/assets/images/quickpick-heatmap.png"
-              description="In collaboration with the California Strawberry Commission, I served as front-end
-              technical lead to develop a platform to enhance strawberry production through remote operation
-              of strawberry harvesters and analysis of the farm’s data.  This project allowed users to control a robot
-              to pick strawberries or classify strawberries as potentially diseased to provide the farm owner a heat
-              map of infestations.  The MQTT protocol was used to stream commands to a RaspberryPi-powered robot,
+              description="In collaboration with the California Strawberry Commission, I served as the front-end
+              technical lead to develop a platform to improve strawberry production through remote operation
+              of strawberry harvesters and analysis of the farm’s data. This project allowed users to control a robot
+              to pick strawberries or classify strawberries as potentially diseased, providing the farm owner a heat
+              map of infestations. The MQTT protocol was used to stream commands to a RaspberryPi-powered robot,
               which streamed a live video feed back to the browser."
               technologies={['React', 'AWS', 'Java Spring', 'Typescript']}
             />
@@ -201,7 +198,7 @@ const Index = () => {
               structurally match one another, others may look drastically different. The inclusion of code clones
               clutters a code base, leading to increased costs through maintenance. While manual clone identification may be
               more accurate than automated detection, it is infeasible due to the extensive size of many code
-              bases.  This thesis outlines a method of detecting clones using a program dependence
+              bases. This thesis outlines a method of detecting clones using a program dependence
               graph and subgraph isomorphism to identify similar subgraphs, ultimately illuminating clones."
               technologies={['Java', 'CLI']}
             />
@@ -211,7 +208,7 @@ const Index = () => {
           <div className="footer grid gap-8 py-6 md:py-10">
             <a
               className="white-button"
-              href="/assets/resume.pdf"
+              href="/assets/Resume.pdf"
               download="Thomas_Simko_Resume.pdf"
             >
               <IconWithText icon={faDownload} buttonText="Download Resume" />
